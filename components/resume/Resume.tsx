@@ -133,6 +133,7 @@ export default function EnhancedTraditionalCV() {
             togglePrintSection={togglePrintSection}
             setAlertMessage={setAlertMessage}
             setShowAlert={setShowAlert}
+            class="top-4"
           />
         </div>
       </div>
