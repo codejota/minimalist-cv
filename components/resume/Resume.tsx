@@ -1,5 +1,6 @@
 // Resume.tsx\
 "use client";
+
 import React, { useState, useEffect, useRef } from "react";
 import { config } from "@/app/config/resume";
 import Header from "./Header";
@@ -103,11 +104,11 @@ export default function EnhancedTraditionalCV() {
   };
 
   return (
-    <div className={`p-4  ${isDarkMode ? "dark" : ""}`}>
-      <div className="relative w-full  max-w-[260mm] mx-auto flex">
+    <div className={`${isDarkMode ? "dark" : ""} min-h-screen w-full`}>
+      <div className="relative w-full max-w-[260mm] mx-auto flex flex-col md:flex-row">
         <div
           id="resume"
-          className={`min-h-[297mm] p-6 bg-card shadow-lg text-black dark:text-white flex-1 rounded-xl`}
+          className={`min-h-screen md:min-h-[297mm] p-4 md:p-6 bg-card shadow-lg text-black dark:text-white flex-1 md:rounded-xl overflow-x-hidden`}
           ref={resumeRef}
         >
           <Header config={config} />
@@ -125,7 +126,7 @@ export default function EnhancedTraditionalCV() {
           )}
         </div>
 
-        <div className="sticky top-4 ml-2 ">
+        <div className="sticky top-4 mt-4 md:mt-0 md:ml-2">
           <SettingsDialog
             isDarkMode={isDarkMode}
             setIsDarkMode={setIsDarkMode}
@@ -133,7 +134,6 @@ export default function EnhancedTraditionalCV() {
             togglePrintSection={togglePrintSection}
             setAlertMessage={setAlertMessage}
             setShowAlert={setShowAlert}
-            class="top-4"
           />
         </div>
       </div>
