@@ -104,7 +104,7 @@ export default function EnhancedTraditionalCV() {
 
   return (
     <div className={`p-4  ${isDarkMode ? "dark" : ""}`}>
-      <div className="relative max-w-[260mm] mx-auto flex">
+      <div className="relative w-full  max-w-[260mm] mx-auto flex">
         <div
           id="resume"
           className={`min-h-[297mm] p-6 bg-card shadow-lg text-black dark:text-white flex-1 rounded-xl`}
