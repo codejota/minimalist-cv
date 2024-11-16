@@ -30,11 +30,11 @@ export default function Header({ config }) {
             ))}
           </div>
         )}
-        <div className="flex space-x-4 mb-2">
+        <div className="flex flex-wrap space-x-4 mb-2">
           {config.personal.email && (
             <a
               href={`mailto:${config.personal.email}`}
-              className="flex items-center"
+              className="flex items-center mb-2 sm:mb-0"
             >
               <Mail className="w-4 h-4 mr-1" />
               {config.personal.email}
@@ -46,7 +46,7 @@ export default function Header({ config }) {
               href={`https://wa.me/${config.personal.phone.replace(/\D/g, "")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center"
+              className="flex "
             >
               <Phone className="w-4 h-4 mr-1" />
               {config.personal.phone}

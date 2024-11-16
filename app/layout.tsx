@@ -140,7 +140,7 @@ const Layout = (props: LayoutProps) => {
         <Providers>
           <main
             id="skip-nav"
-            className="mx-auto mb-16 max-w-10xl px-8 py-5 sm:px-8 "
+            className="mx-auto mb-1 max-w-6xl px-4 py-4 sm:px-4"
           >
             {children}
           </main>

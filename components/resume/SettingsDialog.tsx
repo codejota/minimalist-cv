@@ -165,65 +165,66 @@ export default function SettingsDialog({
   };
 
   return (
-    <div>
-      <div className="">
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="outline" className="w-10 h-10 rounded-full mb-2 ">
-              <Settings className="h-8 w-8" />
-            </Button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Opções de impressão</DialogTitle>
-              <DialogDescription>
-                Aqui você pode baixar o meu currículo em PDF ou PNG e escolher
-                quais seções mostrar.
-              </DialogDescription>
-            </DialogHeader>
-            <Command>
-              <CommandList>
-                <CommandGroup heading="Download">
+    <div className="fixed bottom-0 left-0 w-full sm:relative sm:w-auto sm:mt-10">
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button
+            variant="outline"
+            className="w-10 h-10 rounded-full mt-2 sm:mt-0"
+          >
+            <Settings className="h-8 w-8" />
+          </Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Opções de impressão</DialogTitle>
+            <DialogDescription>
+              Aqui você pode baixar o meu currículo em PDF ou PNG e escolher
+              quais seções mostrar.
+            </DialogDescription>
+          </DialogHeader>
+          <Command>
+            <CommandList>
+              <CommandGroup heading="Download">
+                <CommandItem
+                  onSelect={handleDownloadPDF}
+                  disabled={isGeneratingPDF}
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  <span>
+                    {isGeneratingPDF ? "Gerando PDF..." : "Download PDF"}
+                  </span>
+                </CommandItem>
+                <CommandItem onSelect={handleDownloadPNG}>
+                  <Download className="mr-2 h-4 w-4" />
+                  <span>Download PNG</span>
+                </CommandItem>
+                <CommandItem onSelect={handlePrint}>
+                  <Printer className="mr-2 h-4 w-4" />
+                  <span>Imprimir</span>
+                </CommandItem>
+              </CommandGroup>
+              <Separator />
+              <CommandGroup heading="Seções para mostrar">
+                {Object.entries(printSections).map(([key, value]) => (
                   <CommandItem
-                    onSelect={handleDownloadPDF}
-                    disabled={isGeneratingPDF}
+                    key={key}
+                    onSelect={() => togglePrintSection(key)}
                   >
-                    <Download className="mr-2 h-4 w-4" />
-                    <span>
-                      {isGeneratingPDF ? "Gerando PDF..." : "Download PDF"}
-                    </span>
+                    <Checkbox
+                      checked={value}
+                      onCheckedChange={() => togglePrintSection(key)}
+                      className="mr-2"
+                    />
+                    <span>{key.charAt(0).toUpperCase() + key.slice(1)}</span>
                   </CommandItem>
-                  <CommandItem onSelect={handleDownloadPNG}>
-                    <Download className="mr-2 h-4 w-4" />
-                    <span>Download PNG</span>
-                  </CommandItem>
-                  <CommandItem onSelect={handlePrint}>
-                    <Printer className="mr-2 h-4 w-4" />
-                    <span>Imprimir</span>
-                  </CommandItem>
-                </CommandGroup>
-                <Separator />
-                <CommandGroup heading="Seções para mostrar">
-                  {Object.entries(printSections).map(([key, value]) => (
-                    <CommandItem
-                      key={key}
-                      onSelect={() => togglePrintSection(key)}
-                    >
-                      <Checkbox
-                        checked={value}
-                        onCheckedChange={() => togglePrintSection(key)}
-                        className="mr-2"
-                      />
-                      <span>{key.charAt(0).toUpperCase() + key.slice(1)}</span>
-                    </CommandItem>
-                  ))}
-                </CommandGroup>
-              </CommandList>
-            </Command>
-          </DialogContent>
-        </Dialog>
-      </div>
-      <div className="">
+                ))}
+              </CommandGroup>
+            </CommandList>
+          </Command>
+        </DialogContent>
+      </Dialog>
+      <div className="mt-2">
         <ThemeToggle />
       </div>
     </div>

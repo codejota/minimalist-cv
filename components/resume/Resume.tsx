@@ -125,13 +125,7 @@ export default function EnhancedTraditionalCV() {
           )}
         </div>
 
-        <div
-          className="sticky top-4 ml-4"
-          style={{
-            height: `calc(100vh - 32px)`,
-            overflowY: "auto",
-          }}
-        >
+        <div className="sticky top-4 ml-2 ">
           <SettingsDialog
             isDarkMode={isDarkMode}
             setIsDarkMode={setIsDarkMode}
