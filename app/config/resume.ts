@@ -402,5 +402,13 @@ export const config: ResumeConfig = {
         "PostgreSQL",
       ],
     },
+    {
+      image: "/images/projects/vsctask.png",
+      title: "VSC Task Creator",
+      description:
+        "Projeto para criação de tasks no VSCode, com foco em produtividade e organização.",
+      url: "https://vsc-taskcreator.vercel.app/",
+      technologies: ["TypeScript", "React", "TailwindCSS", "Next.js"],
+    },
   ],
 };
