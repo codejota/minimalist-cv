@@ -85,7 +85,7 @@ export const config: ResumeConfig = {
     email: "contato@jotacode.dev",
     phone: "11 93721-8191",
     about:
-      "Sou desenvolvedor fullstack com experiência em desenvolvimento de software e análise de sistemas. No meu trabalho anterior, atuei com ferramentas voltadas para a produção no setor automotivo, com ênfase em automação industrial e implementação de soluções para a Indústria 4.0. Tenho paixão por aprender novas tecnologias e resolver problemas. Graduado em Gestão de TI pela USCS e cursando uma Pós-Graduação em Desenvolvimento Fullstack na PUC-SP.",
+      "Sou desenvolvedor fullstack com experiência em desenvolvimento de software e Suporte tecnico e monitoramente de sistemas. No meu trabalho anterior, atuei com ferramentas voltadas para a produção no setor automotivo, com ênfase em automação industrial e implementação de soluções para a Indústria 4.0. Fiz implemetações de sistemas internos e manutençao, como Zabbix e Grafana, além do suporte tenico de diferentes niveis. Tenho paixão por aprender novas tecnologias e resolver problemas. Graduado em Gestão de TI pela USCS e cursando uma Pós-Graduação em Desenvolvimento Fullstack na PUC-SP e iniciando meus estudos em graduaçao em Engenharia de Software.",
   },
   social: [
     {
@@ -153,7 +153,7 @@ export const config: ResumeConfig = {
         "Criação e implementação de Dashboard em Power BI para acompanhamento de chamados do time de Infraestrutura e Sistemas.",
         "Implementação de projetos voltados ao MES e ERP.",
         "Uso de SVN, Git, GitHub e Bash.",
-        "Uso de .NET C#, Python, Protocolo MQTT e Power BI.",
+        "Uso das Stacks .NET C#, Python, Protocolo MQTT e Power BI.",
         "Uso de OracleSQL & MySQL para bancos de dados.",
         "Melhoria de sistemas legados.",
         "Desenvolvimento de ferramentas para o chão de fábrica.",
@@ -162,6 +162,7 @@ export const config: ResumeConfig = {
         "Documentação de procedimentos e configurações.",
         "Participação na implementação de projetos de infraestrutura e sistemas.",
         "Resolução de problemas relacionados a hardware e software.",
+        "Monitoramento de sistemas e rede com Zabbix e Grafana.",
         "Desenvolvimento com .NET, C#, Power BI, Power Automate e outras tecnologias.",
       ],
     },
@@ -187,6 +188,7 @@ export const config: ResumeConfig = {
         "Uso de OracleDB para banco de dados.",
         "Desenvolvimento no-code com PowerApps e Power Automate.",
         "Desenvolvimento de dashboards usando Power BI para monitoramento de qualidade e segurança.",
+        "Monitoramento de sistemas e rede com Zabbix e Grafana.",
         "Continuação das atividades da posição anterior relacionadas à infraestrutura.",
       ],
     },
@@ -218,12 +220,20 @@ export const config: ResumeConfig = {
 
   education: [
     {
+      institution: "Engenharia de Software - FIAP",
+      degree: "Bacharelado",
+      field: "Engenharia de Software - Inicio em Fevereiro",
+      startDate: "2025",
+      endDate: "2029",
+      location: "São Paulo, Brasil",
+    },
+    {
       institution: "Desenvolvimento Fullstack - PUC-SP",
       degree: "Pós-Graduação",
       field: "Desenvolvimento Fullstack",
       startDate: "2024",
       endDate: "2026",
-      location: "São Paulo, Brasil",
+      location: "EAD",
     },
     {
       institution: "Gestão de Tecnologia da Informação - USCS",
@@ -295,6 +305,9 @@ export const config: ResumeConfig = {
         "SVN",
         "Cisco",
         "WSL",
+        "Grafana",
+        "Zabbix",
+        "Logix",
       ],
     },
     {
