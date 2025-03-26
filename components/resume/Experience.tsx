@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import { useState } from "react";
 import {
   Card,
   CardContent,
@@ -7,6 +9,7 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ChevronDown } from "lucide-react";
 
 export default function Experience({ config }) {
   return (
@@ -35,28 +38,20 @@ export default function Experience({ config }) {
               <p className="text-sm mb-2">{exp.description}</p>
               {exp.responsibilities && exp.responsibilities.length > 0 && (
                 <>
-                  <h4 className="font-semibold text-sm mb-1">
-                    Responsabilidades:
-                  </h4>
-                  <ul className="list-disc list-inside text-sm mb-2 ">
-                    {exp.responsibilities.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                    <h4 className="font-semibold text-sm  mt-5 mb-1 ">
-                      Stacks:
-                    </h4>
-                    {exp.technologies && exp.technologies.length > 0 && (
-                      <>
-                        <div className="flex flex-wrap gap-1 pt-2">
-                          {exp.technologies.map((tech, i) => (
-                            <Badge key={i} variant="secondary">
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                      </>
-                    )}
-                  </ul>
+                  <ResponsibilitiesCollapsible
+                    responsibilities={exp.responsibilities}
+                  />
+
+                  <h4 className="font-semibold text-sm mt-5 mb-1">Stacks:</h4>
+                  {exp.technologies && exp.technologies.length > 0 && (
+                    <div className="flex flex-wrap gap-1 pt-2">
+                      {exp.technologies.map((tech, i) => (
+                        <Badge key={i} variant="secondary">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
                 </>
               )}
             </CardContent>
@@ -66,5 +61,36 @@ export default function Experience({ config }) {
         <p>No experience listed</p>
       )}
     </section>
+  );
+}
+
+function ResponsibilitiesCollapsible({ responsibilities }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="w-full">
+      <div className="flex items-center">
+        <h4 className="font-semibold text-sm mb-1">Responsabilidades:</h4>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex items-center text-xs text-muted-foreground ml-2 hover:text-primary"
+        >
+          <span>Clique para mais informações</span>
+          <ChevronDown
+            className={`h-4 w-4 ml-1 transition-transform duration-200 ${
+              isOpen ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+      </div>
+
+      {isOpen && (
+        <ul className="list-disc list-inside text-sm mb-2 mt-2 animate-in fade-in-50 duration-300">
+          {responsibilities.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
